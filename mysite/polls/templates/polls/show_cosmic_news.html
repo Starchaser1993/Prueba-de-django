@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic News</title>
+</head>
+<body>
+    <h1>Noticias Cósmicas</h1>
+    
+    <h2>Noticias de NASA:</h2>
+    <ul>
+        {% for news in nasa_news %}
+        <li>
+            <a href="{{ news.link }}">{{ news.title }}</a><br>
+            {{ news.summary }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Noticias de The Astrophysical Journal Letters:</h2>
+    <ul>
+        {% for news in journal_news %}
+        <li>
+            <a href="{{ news.link }}">{{ news.title }}</a><br>
+            {{ news.summary }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
