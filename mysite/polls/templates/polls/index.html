@@ -1,9 +1,29 @@
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediciendo Pulsares</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prediciendo Pulsares</h1>
+            <nav class="navbar">
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'show_csv' %}">Resultados data test</a>
+                <a href="{% url 'show_csv' %}">Resultados data train</a>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            </nav>
+        </header>
+        <main>
+            <img src="{% static 'images/Pulsar.jpg' %}" alt="Imagen de un Pulsar" class="pulsar-image">
+        </main>
+        <footer>
+            <p>&copy; Mi sitio creado en 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

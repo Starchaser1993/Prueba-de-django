@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados data test</title>
+</head>
+<body>
+    <h1>Resultados data test</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Promedio del perfil integrado</th>
+                <th>Desviación estándar del perfil integrado</th>
+                <th>Curtosis en exceso del perfil integrado</th>
+                <th>Asimetría del perfil integrado</th>
+                <th>Promedio de la curva DM-SNR</th>
+                <th>Desviación estándar de la curva DM-SNR</th>
+                <th>Curtosis en exceso de la curva DM-SNR</th>
+                <th>Asimetría de la curva DM-SNR</th>
+                <th>Clase objetivo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in csv_data %}
+            <tr>
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>{{ row.3 }}</td>
+                <td>{{ row.4 }}</td>
+                <td>{{ row.5 }}</td>
+                <td>{{ row.6 }}</td>
+                <td>{{ row.7 }}</td>
+                <td>{{ row.8 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+

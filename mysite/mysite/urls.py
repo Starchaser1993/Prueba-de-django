@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic import RedirectView
+from polls import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
     # Otra opción para redirigir a 'polls' como página de inicio
-    path('', RedirectView.as_view(url='/polls/', permanent=True)),
+    #path('', RedirectView.as_view(url='/polls/', permanent=True)),
     # Puedes añadir otras URLs aquí según tus necesidades
+    path('', views.index, name='index'),
 ]
